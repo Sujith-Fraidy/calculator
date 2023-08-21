@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'iFont-Regular';
+    src: url(./asserts/iFonts/SF-Pro-Text-Regular.otf);
+}
+@font-face {
+    font-family: 'iFont-Bold';
+    src: url(./asserts/iFonts/SF-Pro-Text-Bold.otf);
+}
+@font-face {
+    font-family: 'iFont-Medium';
+    src: url(./asserts/iFonts/SF-Pro-Text-Medium.otf);
+}
+@font-face {
+    font-family: 'iFont-Light';
+    src: url(./asserts/iFonts/SF-Pro-Display-Thin.otf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'iFont-Regular';
+}
+.iphone-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./asserts/Background.jpg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iphone,.calculator{
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 80vh;
+    width: 360px;
+    border-radius: 47px;
+}
+.calculator{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.calc-button-row{
+    width: 340px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.calc-button{
+    border:0;
+    border-radius: 50%;
+    width:75px;
+    height: 75px;
+    margin-bottom: 20px;
+    background-color: #333333;
+    color: #fff;
+    font-size: 35px;
+}
+.calc-button-row:first-of-type button{
+    background-color: #a5a5a5;
+    color: #000;
+}
+.calc-button:last-child{
+    background-color: #ff9f0a !important;
+    color: #fff !important;
+}
+.double{
+    width: 150px;
+    border-radius: 50px;
+    text-align: left;
+    padding-left: 35px;
+}
+.buffer{
+    color: #fff;
+    width: 100%;
+    height: 40%;
+    font-size: 85px;
+    font-family: 'iFont-Light';
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding-bottom:30px;
+    padding-right: 50px;
+}
