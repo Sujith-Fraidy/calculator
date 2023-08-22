@@ -4,7 +4,7 @@ var runningTotal=0
 var activeOperator=false
 var currentOperator='none'
 var handleButtonClick = (event)=>{
-    // console.log(buffer.innerHTML,runningTotal)
+    console.log(buffer.innerHTML,runningTotal)
     switch(event.target.innerHTML){
         case 'AC':
             handleFlush()
@@ -17,8 +17,12 @@ var handleButtonClick = (event)=>{
             break;
         case '=':
             handleOperation()
+            // if(!activeOperator && runningTotal===0){
+            //     break;
+            // }
             buffer.innerHTML=runningTotal
             activeOperator=false
+            runningTotal=0
             break;
         case '%':
             runningTotal=buffer.innerHTML
@@ -30,7 +34,7 @@ var handleButtonClick = (event)=>{
         case '×':
         case '÷':
             currentOperator=event.target.innerHTML
-            runningTotal=parseInt(buffer.innerHTML)
+            runningTotal=parseFloat(buffer.innerHTML)
             activeOperator=true
             break;
         default:
@@ -46,19 +50,19 @@ var handleFlush = ()=>{
 var handleOperation = (event)=>{
     switch(currentOperator){
         case '+':
-            return(runningTotal+=parseInt(buffer.innerHTML))
+            return(runningTotal+=parseFloat(buffer.innerHTML))
         case '−':
-            return(runningTotal-=parseInt(buffer.innerHTML))
+            return(runningTotal-=parseFloat(buffer.innerHTML))
         case '×':
-            return(runningTotal*=parseInt(buffer.innerHTML))
+            return(runningTotal*=parseFloat(buffer.innerHTML))
         case '÷':
-            return(runningTotal/=parseInt(buffer.innerHTML))
+            return(runningTotal/=parseFloat(buffer.innerHTML))
     }
 }
 var handleNumber = (event)=>{
     if (buffer.innerHTML ==='0' || activeOperator){
         buffer.innerHTML=(event.target.innerHTML)
-        activeOperator=false
+        activeOperator=false    
     }
     else{
         buffer.innerHTML+=event.target.innerHTML
