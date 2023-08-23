@@ -114,6 +114,7 @@ buttons.forEach((button) => {
 var checkBox = document.querySelector(".toggle-div");
 var calculator = document.querySelector(".calculator");
 checkBox.onchange = (e) => {
+  console.log('working')
   if (e.target.checked === true) {
     calculator.style.backgroundColor = "#000";
   } else calculator.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
